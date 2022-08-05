@@ -3,7 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  baseUrl: 'http://api.solar.servinet.local/api/',
+  baseUrlGateway: 'v1/web/',
+  baseApiSolar: 'v1/',
 };
 
 /*

@@ -1,1 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
+.spinner {
+    position: absolute !important;
+    z-index: 100000;
+    width: 100% !important;
+    height: 100% !important;
+    background: rgba(0, 0, 0, 0.26);
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    // background-image: url(assets/logo2.png);
+    background-repeat: no-repeat;
+    background-size: 120px;
+    background-position-x: center;
+    background-position-y: center;
+    overflow: inherit;
+  }
+  mat-spinner {
+    width: 150px !important;
+    height: 150px !important;
+    svg {
+      top: inherit !important;
+      left: inherit !important;
+      width: 150px !important;
+      height: 150px !important;
+    }
+  }

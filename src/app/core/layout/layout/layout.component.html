@@ -1,0 +1,50 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a
+            class="nav-link active"
+            aria-current="page"
+            href="#"
+            [routerLink]="['/']"
+            >Home</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" [routerLink]="['/todos']">Posts</a>
+        </li>
+        <li class="nav-item" *ngIf="!(isAuthenticated$ | async)">
+          <a class="nav-link" href="#" [routerLink]="['/access']">Login</a>
+        </li>
+
+        <li class="nav-item" *ngIf="isAuthenticated$ | async">
+          <a class="nav-link" href="#" (click)="logout($event)">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<mat-spinner *ngIf="showSpinner$ | async" class="spinner"></mat-spinner>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="alert alert-danger" *ngIf="errorMessage$ | async as error">
+        {{ error.message }}
+      </div>
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
